@@ -59,7 +59,7 @@ variable "node_count" {
 
 variable "node_vm_size" {
   type    = string
-  default = "Standard_B2ls_v2" # 2 vCPU / 4 GB. Standard_B2ms (8 GB) for real workloads
+  default = "Standard_F2as_v6"
 }
 
 # --------------------------------------------------------------------------- #
