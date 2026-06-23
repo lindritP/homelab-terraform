@@ -59,7 +59,7 @@ variable "node_count" {
 
 variable "node_vm_size" {
   type    = string
-  default = "Standard_F2as_v6" 
+  default = "Standard_F2as_v6"
 }
 
 # --------------------------------------------------------------------------- #
