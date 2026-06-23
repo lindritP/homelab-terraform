@@ -1,0 +1,5 @@
+.terraform/*
+.claude/*
+
+.terraform.lock.hcl
+.tflint.hcl

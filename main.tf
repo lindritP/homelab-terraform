@@ -126,6 +126,21 @@ resource "helm_release" "argocd" {
   # https://artifacthub.io/packages/helm/argo/argo-cd
   version = "7.7.0"
 
+  # Run argocd-server in insecure mode: it serves plain HTTP and lets ingress-nginx
+  # terminate TLS (the Argo-recommended setup behind an nginx ingress). global.domain
+  # sets the canonical UI URL so links/redirects are correct. The Ingress + cert live
+  # in the GitOps repo (k8s/infrastructure/argocd-server-ingress.yaml).
+  values = [yamlencode({
+    global = {
+      domain = "argocd.lindrit.at"
+    }
+    configs = {
+      params = {
+        "server.insecure" = true
+      }
+    }
+  })]
+
   depends_on = [azurerm_kubernetes_cluster.homelab]
 }
 
