@@ -44,7 +44,7 @@ variable "resource_group_name" {
 
 variable "location" {
   type    = string
-  default = "West Europe" # close to Austria; "Germany West Central" also works
+  default = "germanywestcentral" # close to Austria; "Germany West Central" also works
 }
 
 variable "cluster_name" {
