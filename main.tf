@@ -124,7 +124,7 @@ resource "helm_release" "argocd" {
   chart      = "argo-cd"
   # Pin a version for reproducibility — find the latest at:
   # https://artifacthub.io/packages/helm/argo/argo-cd
-   version = "7.7.0"
+  version = "7.7.0"
 
   depends_on = [azurerm_kubernetes_cluster.homelab]
 }
